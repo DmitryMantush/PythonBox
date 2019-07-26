@@ -3,10 +3,11 @@ while True:
     expr = input()
     if expr == 'Q':
         break
-    rev_expr = expr[::-1]
-    print(rev_expr)
-    if expr == rev_expr:
-        print('Wow, it` s a palindrome bro')
+    counter = 0
+    for z in range(len(expr)//2):
+        if expr[z] == expr[-z-1]:
+            counter += 1
+    if counter == len(expr)//2:
+        print('palindrome')
     else:
-        print('Palindrome expected. Try again.')
-
+        print('random')
